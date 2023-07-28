@@ -1,0 +1,28 @@
+/* techSection.css */
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .my-card {
+    /* Add your custom styles for the my-card class */
+    /* For example: */
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
