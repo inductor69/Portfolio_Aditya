@@ -1,4 +1,4 @@
-# meaditya.com: A Portfolio Site
+# Aditya's Portfolio Site
 
 Welcome to my portfolio site repo. This project showcases my work as a full stack web developer and software engineer and provides ways for people to reach out or learn more about me.
 
