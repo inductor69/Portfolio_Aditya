@@ -26,7 +26,7 @@ export default function Home() {
           name="description"
           content="Crafting Digital Dreams: Fullstack Web Wizardry"
         />
-        <link rel="icon" href="/pfp.jpg" />
+        <link rel="icon" href="/aditya.jpeg" />
       </Head>
 
       <main className="space-y-5">
