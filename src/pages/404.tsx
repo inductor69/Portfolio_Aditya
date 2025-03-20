@@ -8,7 +8,7 @@ const NotFound = () => {
         <title>aditya k / 404</title>
         <meta
           name="description"
-          content="Crafting Digital Dreams: Fullstack Web Wizardry"
+          content="low latency engineering, fullstack web wizardry"
         />
       </Head>
 
