@@ -11,7 +11,6 @@ const eventSchema = z.object({
     "open_command_menu",
     "command_menu_search",
     "command_menu_action",
-    "blog_search",
   ]),
   properties: z
     .record(z.union([z.string(), z.number(), z.boolean(), z.null()]))
