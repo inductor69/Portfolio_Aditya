@@ -34,12 +34,6 @@ export const USER = {
 - **Software Engineer** with strong experience in building low-latency trading systems, exchange integrations, and high-performance backend services.
 - Skilled in **C++**, **Go**, **Python**, **TypeScript**, and distributed systems design; focused on reliability, throughput, and real-time data processing. 
 - Experienced in architecting OMS/PMS platforms, multi-exchange reconciliation engines, and event-driven microservices using Redis, NATS, gRPC, and WebSockets..
-- Creator of [ZaDark](https://zadark.com) (2022): enhances the Zalo experience on PC & Web
-  - 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark)
-  - 30k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob)
-- Creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com): iOS-like wheel picker with inertia scrolling & infinite loop
-  - 10k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker)
-  - [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort
 `,
   avatar: "./img/ak.png",
   ogImage:
