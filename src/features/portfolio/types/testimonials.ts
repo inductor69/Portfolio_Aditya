@@ -6,7 +6,7 @@ export type Testimonial = {
   /** Short tagline, title, or description of the person */
   authorTagline: string
   /** Link to the person's profile, website, or social media page */
-  url: string
+  url?: string
   /** The testimonial text content or recommendation message */
   quote: string
 }

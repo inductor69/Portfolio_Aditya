@@ -33,8 +33,7 @@ export type User = {
   avatar: string
   /** Open Graph image URL for social sharing */
   ogImage: string
-  /** Audio URL for name pronunciation */
-  namePronunciationUrl: string
+
   /** Affiliate badge displayed to the right of displayName */
   affiliateBadge?: {
     name: string

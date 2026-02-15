@@ -1,39 +1,39 @@
 import type { User } from "@/features/portfolio/types/user"
 
 export const USER = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Aditya",
+  lastName: "Kumar",
+  displayName: "Aditya Kumar",
+  username: "inductor69",
   gender: "male",
   pronouns: "he/him",
   bio: "Creating with code. Small details matter.",
   flipSentences: [
     "Creating with code. Small details matter.",
-    "Design Engineer",
+    "Software Engineer",
     "Open Source Contributor",
   ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
+  address: "New Delhi, India",
+  phoneNumber: "KzkxOTY1MDA5Mzc1MQ==", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
+  email: "YWRpdHlha2lpdGRsZWhpQGdtYWlsLmNvbQ==", // base64 encoded
+  website: "https://meaditya.com",
+  jobTitle: "Software Engineer",
   jobs: [
     {
-      title: "Design Engineer",
-      company: "Shadcraft",
-      website: "https://shadcraft.com",
+      title: "Software Engineer",
+      company: "Kryptos",
+      website: "https://kryptos.io",
     },
     {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
+      title: "Software Engineer",
+      company: "Auro Digital",
+      website: "https://aurodigital.ai",
     },
   ],
   about: `
-- **Design Engineer** with 5+ years of experience, known for pixel-perfect execution and strong attention to small details.
-- Skilled in **Next.js**, **React**, **TypeScript**, and modern front-end technologies; building high-quality, user-centric web and mobile applications.
-- Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted personal projects.
+- **Software Engineer** with strong experience in building low-latency trading systems, exchange integrations, and high-performance backend services.
+- Skilled in **C++**, **Go**, **Python**, **TypeScript**, and distributed systems design; focused on reliability, throughput, and real-time data processing. 
+- Experienced in architecting OMS/PMS platforms, multi-exchange reconciliation engines, and event-driven microservices using Redis, NATS, gRPC, and WebSockets..
 - Creator of [ZaDark](https://zadark.com) (2022): enhances the Zalo experience on PC & Web
   - 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark)
   - 30k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob)
@@ -41,16 +41,15 @@ export const USER = {
   - 10k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker)
   - [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort
 `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
+  avatar: "./img/ak.png",
   ogImage:
     "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?v=6",
-  namePronunciationUrl: "/audio/chanhdai.mp3",
   affiliateBadge: {
     name: "Shadcraft",
     url: "https://shadcraft.com",
     logo: "https://assets.chanhdai.com/images/companies/shadcraft.svg?v=2",
   },
-  timeZone: "Asia/Ho_Chi_Minh",
+  timeZone: "Asia/Kolkata",
   keywords: [
     "ncdai",
     "nguyenchanhdai",

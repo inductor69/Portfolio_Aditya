@@ -10,42 +10,20 @@ export function SiteFooter() {
   return (
     <footer className="max-w-screen overflow-x-hidden px-2">
       <div className="screen-line-before mx-auto border-x border-edge pt-4 md:max-w-3xl">
-        <p className="mb-1 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
-          Inspired by tailwindcss.com & ui.shadcn.com
-        </p>
-
         <p className="mb-4 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
-          Built by{" "}
+          Built with ❤️ by{" "}
           <a
             className="link transition-[color] hover:text-foreground"
-            href="https://x.com/iamncdai"
+            href="https://x.com/aditya__50"
             target="_blank"
             rel="noopener"
           >
-            ncdai
-          </a>
-          . The source code is available on{" "}
-          <a
-            className="link transition-[color] hover:text-foreground"
-            href={SOURCE_CODE_GITHUB_URL}
-            target="_blank"
-            rel="noopener"
-          >
-            GitHub
+            aditya
           </a>
           .
         </p>
 
         <div className="screen-line-before flex justify-center gap-2 py-3 font-mono text-xs text-muted-foreground sm:hidden">
-          <Link
-            className="font-medium transition-[color] hover:text-foreground"
-            href="/sponsors"
-          >
-            Sponsors
-          </Link>
-
-          <span className="opacity-50">•</span>
-
           <a
             className="font-medium transition-[color] hover:text-foreground"
             href={`${SITE_INFO.url}/llms.txt`}
@@ -58,15 +36,6 @@ export function SiteFooter() {
 
         <div className="screen-line-before screen-line-after flex w-full before:z-1 after:z-1">
           <div className="mx-auto flex items-center justify-center gap-3 border-x border-edge bg-background px-4">
-            <Link
-              className="flex font-mono text-xs font-medium text-muted-foreground transition-[color] hover:text-foreground max-sm:hidden"
-              href="/sponsors"
-            >
-              Sponsors
-            </Link>
-
-            <Separator className="max-sm:hidden" />
-
             <a
               className="flex font-mono text-xs font-medium text-muted-foreground transition-[color] hover:text-foreground max-sm:hidden"
               href={`${SITE_INFO.url}/llms.txt`}
@@ -80,7 +49,7 @@ export function SiteFooter() {
 
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href="https://x.com/iamncdai?utm_source=chanhdai.com"
+              href="https://x.com/aditya__50?utm_source=meaditya.com"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -92,7 +61,7 @@ export function SiteFooter() {
 
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href="https://github.com/ncdai?utm_source=chanhdai.com"
+              href="https://github.com/inductor69?utm_source=meaditya.com"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -104,7 +73,7 @@ export function SiteFooter() {
 
             <a
               className="flex items-center text-muted-foreground transition-[color] hover:text-foreground"
-              href="https://www.linkedin.com/in/ncdai?utm_source=chanhdai.com"
+              href="https://www.linkedin.com/in/aditya-Kumar-inductor?utm_source=meaditya.com"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -3,32 +3,24 @@
 import { useCommandState } from "cmdk"
 import type { LucideProps } from "lucide-react"
 import {
-  AwardIcon,
-  BookmarkIcon,
   BoxIcon,
   BriefcaseBusinessIcon,
-  CircleCheckBigIcon,
   CornerDownLeftIcon,
-  DownloadIcon,
   FileTextIcon,
-  HeartIcon,
+  GraduationCapIcon,
   LayersIcon,
   MoonStarIcon,
   MousePointer2Icon,
   QuoteIcon,
   RssIcon,
   SunMediumIcon,
-  TextIcon,
   TextInitialIcon,
-  TriangleDashedIcon,
-  TypeIcon,
 } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useTheme } from "next-themes"
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
-import { toast } from "sonner"
 
 import {
   CommandDialog,
@@ -38,17 +30,14 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
-import type { PostPreview } from "@/features/blog/types/post"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 import { useDuckFollowerVisibility } from "@/hooks/use-duck-follower-visibility"
 import { useSound } from "@/hooks/use-sound"
 import { trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
-import { copyText } from "@/utils/copy"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
-import { ComponentIcon, Icons } from "./icons"
+import { AKMark } from "./ak-mark"
+import { Icons } from "./icons"
 import { Button } from "./ui/button"
 import { Kbd, KbdGroup } from "./ui/kbd"
 import { Separator } from "./ui/separator"
@@ -67,17 +56,7 @@ const MENU_LINKS: CommandLinkItem[] = [
   {
     title: "Portfolio",
     href: "/",
-    icon: ChanhDaiMark,
-  },
-  {
-    title: "Components",
-    href: "/components",
-    icon: Icons.react,
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-    icon: RssIcon,
+    icon: AKMark,
   },
 ]
 
@@ -103,30 +82,20 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     icon: BriefcaseBusinessIcon,
   },
   {
+    title: "Education",
+    href: "/#education",
+    icon: GraduationCapIcon,
+  },
+  {
     title: "Projects",
     href: "/#projects",
     icon: BoxIcon,
   },
-  {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: AwardIcon,
-  },
-  {
-    title: "Certifications",
-    href: "/#certs",
-    icon: CircleCheckBigIcon,
-  },
-  {
-    title: "Bookmarks",
-    href: "/#bookmarks",
-    icon: BookmarkIcon,
-  },
-  {
-    title: "Download vCard",
-    href: "/vcard",
-    icon: DownloadIcon,
-  },
+  // {
+  //   title: "Download vCard",
+  //   href: "/vcard",
+  //   icon: DownloadIcon,
+  // },
 ]
 
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
@@ -137,11 +106,6 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
 }))
 
 const OTHER_LINK_ITEMS: CommandLinkItem[] = [
-  {
-    title: "Sponsors",
-    href: "/sponsors",
-    icon: HeartIcon,
-  },
   {
     title: "llms.txt",
     href: "/llms.txt",
@@ -156,10 +120,10 @@ const OTHER_LINK_ITEMS: CommandLinkItem[] = [
   },
 ]
 
-export function CommandMenu({ posts }: { posts: PostPreview[] }) {
+export function CommandMenu() {
   const router = useRouter()
 
-  const { setTheme, resolvedTheme } = useTheme()
+  const { setTheme } = useTheme()
 
   const [open, setOpen] = useState(false)
 
@@ -206,21 +170,6 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
     [router]
   )
 
-  const handleCopyText = useCallback((text: string, message: string) => {
-    setOpen(false)
-
-    trackEvent({
-      name: "command_menu_action",
-      properties: {
-        action: "copy",
-        text: text,
-      },
-    })
-
-    copyText(text)
-    toast.success(message)
-  }, [])
-
   const createThemeHandler = useCallback(
     (theme: "light" | "dark" | "system") => () => {
       setOpen(false)
@@ -257,23 +206,6 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
       },
     })
   }, [setIsDuckFollowerVisible])
-
-  const { componentLinks, blogLinks } = useMemo(
-    () => ({
-      componentLinks: posts
-        .filter((post) => post.category === "components")
-        .sort((a, b) =>
-          a.title.localeCompare(b.title, "en", {
-            sensitivity: "base",
-          })
-        )
-        .map(postToCommandLinkItem),
-      blogLinks: posts
-        .filter((post) => post.category !== "components")
-        .map(postToCommandLinkItem),
-    }),
-    [posts]
-  )
 
   return (
     <>
@@ -329,64 +261,10 @@ export function CommandMenu({ posts }: { posts: PostPreview[] }) {
           />
 
           <CommandLinkGroup
-            heading="Components"
-            links={componentLinks}
-            fallbackIcon={Icons.react}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
-            heading="Blog"
-            links={blogLinks}
-            fallbackIcon={TextIcon}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
             heading="Social Links"
             links={SOCIAL_LINK_ITEMS}
             onLinkSelect={handleOpenLink}
           />
-
-          <CommandGroup heading="Brand Assets">
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getMarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Copied Mark as SVG"
-                )
-              }}
-            >
-              <ChanhDaiMark />
-              Copy Mark as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getWordmarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Copied Logotype as SVG"
-                )
-              }}
-            >
-              <TypeIcon />
-              Copy Logotype as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
-              <TriangleDashedIcon />
-              Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
-            </CommandItem>
-          </CommandGroup>
 
           <CommandGroup heading="Theme">
             <CommandItem
@@ -514,7 +392,7 @@ type CommandMetaMap = Map<
 function buildCommandMetaMap() {
   const commandMetaMap: CommandMetaMap = new Map()
 
-  commandMetaMap.set("Download vCard", { commandKind: "command" })
+  // commandMetaMap.set("Download vCard", { commandKind: "command" })
 
   commandMetaMap.set("Light", { commandKind: "command" })
   commandMetaMap.set("Dark", { commandKind: "command" })
@@ -557,7 +435,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <ChanhDaiMark className="size-6 text-muted-foreground" aria-hidden />
+        <AKMark className="size-6 text-muted-foreground" aria-hidden />
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
@@ -574,19 +452,4 @@ function CommandMenuFooter() {
       </div>
     </>
   )
-}
-
-function postToCommandLinkItem(post: PostPreview): CommandLinkItem {
-  const isComponent = post.category === "components"
-
-  const IconComponent = isComponent
-    ? (props: LucideProps) => <ComponentIcon {...props} variant={post.icon} />
-    : undefined
-
-  return {
-    title: post.title,
-    href: isComponent ? `/components/${post.slug}` : `/blog/${post.slug}`,
-    keywords: isComponent ? ["component"] : undefined,
-    icon: IconComponent,
-  }
 }

@@ -7,7 +7,7 @@ import { toast } from "sonner"
 
 import { copyText } from "@/utils/copy"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
+import { AKMark, getMarkSVG } from "./ak-mark"
 import { getWordmarkSVG } from "./chanhdai-wordmark"
 import {
   ContextMenu,
@@ -31,7 +31,7 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
             toast.success("Copied Mark as SVG")
           }}
         >
-          <ChanhDaiMark />
+          <AKMark />
           Copy Mark as SVG
         </ContextMenuItem>
 

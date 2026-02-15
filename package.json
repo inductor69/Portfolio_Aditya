@@ -1,24 +1,24 @@
 {
-  "name": "chanhdai.com",
+  "name": "meaditya.com",
   "version": "0.1.0",
   "description": "A minimal, pixel-perfect dev portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "homepage": "https://meaditya.com",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Aditya Kumar",
+    "email": "adityakiitdelhi@gmail.com",
+    "url": "https://github.com/inductor69"
   },
   "contributors": [
     {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
+      "name": "Aditya Kumar",
+      "email": "adityakiitdelhi@gmail.com",
+      "url": "https://github.com/inductor69"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/inductor69/meaditya.com.git"
   },
   "scripts": {
     "dev": "next dev -p 1408",

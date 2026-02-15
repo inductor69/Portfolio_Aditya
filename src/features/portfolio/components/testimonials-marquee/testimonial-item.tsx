@@ -15,16 +15,10 @@ export function TestimonialItem({
   authorAvatar,
   authorName,
   authorTagline,
-  url,
   quote,
 }: TestimonialType) {
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block h-full transition-[background-color] ease-out hover:bg-accent-muted"
-    >
+    <div className="block h-full">
       <Testimonial>
         <TestimonialQuote>
           <p className="line-clamp-3">{quote}</p>
@@ -41,6 +35,6 @@ export function TestimonialItem({
           <TestimonialAuthorTagline>{authorTagline}</TestimonialAuthorTagline>
         </TestimonialAuthor>
       </Testimonial>
-    </a>
+    </div>
   )
 }
